@@ -1,14 +1,15 @@
 <?php
+
 /**
- * This file adds functions to the Frost WordPress theme.
+ * This file adds functions to the myBase WordPress theme.
  *
- * @package Frost
+ * @package myBase
  * @author  WP Engine
  * @license GNU General Public License v2 or later
- * @link    https://frostwp.com/
+ * @link    https://myBasewp.com/
  */
 
-if ( ! function_exists( 'frost_setup' ) ) {
+if (!function_exists('myBase_setup')) {
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -21,10 +22,11 @@ if ( ! function_exists( 'frost_setup' ) ) {
 	 *
 	 * @return void
 	 */
-	function frost_setup() {
+	function myBase_setup()
+	{
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'frost', get_template_directory() . '/languages' );
+		load_theme_textdomain('myBase', get_template_directory() . '/languages');
 
 		// Enqueue editor styles and fonts.
 		add_editor_style(
@@ -34,18 +36,17 @@ if ( ! function_exists( 'frost_setup' ) ) {
 		);
 
 		// Remove core block patterns.
-		remove_theme_support( 'core-block-patterns' );
-
+		remove_theme_support('core-block-patterns');
 	}
 }
-add_action( 'after_setup_theme', 'frost_setup' );
+add_action('after_setup_theme', 'myBase_setup');
 
 // Enqueue style sheet.
-add_action( 'wp_enqueue_scripts', 'frost_enqueue_style_sheet' );
-function frost_enqueue_style_sheet() {
+add_action('wp_enqueue_scripts', 'myBase_enqueue_style_sheet');
+function myBase_enqueue_style_sheet()
+{
 
-	wp_enqueue_style( 'frost', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
-
+	wp_enqueue_style('myBase', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
 }
 
 /**
@@ -53,37 +54,38 @@ function frost_enqueue_style_sheet() {
  *
  * @since 0.9.2
  */
-function frost_register_block_styles() {
+function myBase_register_block_styles()
+{
 
 	$block_styles = array(
 		'core/columns' => array(
-			'columns-reverse' => __( 'Reverse', 'frost' ),
+			'columns-reverse' => __('Reverse', 'myBase'),
 		),
 		'core/group' => array(
-			'shadow-light' => __( 'Shadow', 'frost' ),
-			'shadow-solid' => __( 'Solid', 'frost' ),
+			'shadow-light' => __('Shadow', 'myBase'),
+			'shadow-solid' => __('Solid', 'myBase'),
 		),
 		'core/image' => array(
-			'shadow-light' => __( 'Shadow', 'frost' ),
-			'shadow-solid' => __( 'Solid', 'frost' ),
+			'shadow-light' => __('Shadow', 'myBase'),
+			'shadow-solid' => __('Solid', 'myBase'),
 		),
 		'core/list' => array(
-			'no-disc' => __( 'No Disc', 'frost' ),
+			'no-disc' => __('No Disc', 'myBase'),
 		),
 		'core/navigation-link' => array(
-			'outline' => __( 'Outline', 'frost' ),
+			'outline' => __('Outline', 'myBase'),
 		),
 		'core/quote' => array(
-			'shadow-light' => __( 'Shadow', 'frost' ),
-			'shadow-solid' => __( 'Solid', 'frost' ),
+			'shadow-light' => __('Shadow', 'myBase'),
+			'shadow-solid' => __('Solid', 'myBase'),
 		),
 		'core/social-links' => array(
-			'outline' => __( 'Outline', 'frost' ),
+			'outline' => __('Outline', 'myBase'),
 		),
 	);
 
-	foreach ( $block_styles as $block => $styles ) {
-		foreach ( $styles as $style_name => $style_label ) {
+	foreach ($block_styles as $block => $styles) {
+		foreach ($styles as $style_name => $style_label) {
 			register_block_style(
 				$block,
 				array(
@@ -94,30 +96,30 @@ function frost_register_block_styles() {
 		}
 	}
 }
-add_action( 'init', 'frost_register_block_styles' );
+add_action('init', 'myBase_register_block_styles');
 
 /**
  * Register block pattern categories.
  *
  * @since 1.0.4
  */
-function frost_register_block_pattern_categories() {
+function myBase_register_block_pattern_categories()
+{
 
 	register_block_pattern_category(
 		'page',
 		array(
-			'label'       => __( 'Page', 'frost' ),
-			'description' => __( 'Create a full page with multiple patterns that are grouped together.', 'frost' ),
+			'label'       => __('Page', 'myBase'),
+			'description' => __('Create a full page with multiple patterns that are grouped together.', 'myBase'),
 		)
 	);
 	register_block_pattern_category(
 		'pricing',
 		array(
-			'label'       => __( 'Pricing', 'frost' ),
-			'description' => __( 'Compare features for your digital products or service plans.', 'frost' ),
+			'label'       => __('Pricing', 'myBase'),
+			'description' => __('Compare features for your digital products or service plans.', 'myBase'),
 		)
 	);
-
 }
 
-add_action( 'init', 'frost_register_block_pattern_categories' );
+add_action('init', 'myBase_register_block_pattern_categories');

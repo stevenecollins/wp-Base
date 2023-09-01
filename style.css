@@ -1,9 +1,9 @@
 /*
-Theme Name: Frost
-Theme URI: https://frostwp.com/
+Theme Name: WP-Base
+Theme URI: https://WP-Base.com/
 Author: WP Engine
-Author URI: https://wpengine.com/
-Description: With its clean, minimal design and powerful feature set, Frost enables agencies to build stylish and sophisticated WordPress websites. Frost is a masterpiece of design and functionality. It features a range of valuable patterns, including hero and portfolio sections, prominent call-to-action buttons, and customer testimonials. Whether you’re building a website for your business, personal brand, or creative project, Frost is perfect for anyone looking to launch quickly and efficiently.
+Author URI: https://stevenecollins.com/
+Description: With its clean, minimal design and powerful feature set, WP-Base enables agencies to build stylish and sophisticated WordPress websites. Frost is a masterpiece of design and functionality. It features a range of valuable patterns, including hero and portfolio sections, prominent call-to-action buttons, and customer testimonials. Whether you’re building a website for your business, personal brand, or creative project, Frost is perfect for anyone looking to launch quickly and efficiently.
 Tags: block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, full-site-editing, one-column, template-editing, threaded-comments, translation-ready, wide-blocks
 Requires at least: 6.2
 Tested up to: 6.2
@@ -11,12 +11,11 @@ Requires PHP: 5.6
 Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: frost
+Text Domain: WP-Base
 
-Frost WordPress Theme, (C) 2022-2023 WP Engine.
-Frost is distributed under the terms of the GNU GPL.
+WP-Base WordPress Theme, (C) 2022-2023 Steven E Collins.
+WP-Base is distributed under the terms of the GNU GPL.
 */
-
 
 /* Defaults
 ---------------------------------------------------------------------------- */
@@ -59,7 +58,11 @@ th {
 }
 
 mark {
-	background: linear-gradient(90deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--primary) 100%);
+	background: linear-gradient(
+		90deg,
+		var(--wp--preset--color--primary) 0%,
+		var(--wp--preset--color--primary) 100%
+	);
 	background-position: 0 85%;
 	background-repeat: repeat-x;
 	background-size: 100% 15%;
@@ -110,6 +113,60 @@ textarea {
 	opacity: 0.5;
 }
 
+/* Standardize form styling
+--------------------------------------------- */
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+input[type="button"],
+input[type="email"],
+input[type="search"],
+input[type="submit"],
+input[type="text"],
+textarea {
+	-webkit-appearance: none;
+}
+
+input:not([type="submit"]),
+select,
+textarea,
+.wp-block-post-comments-form input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-post-comments-form textarea {
+	color: var(--wp--preset--color--main);
+	border-radius: 5px;
+	border: solid 1px var(--wp--preset--color--main-accent);
+	padding: 0.5em 1em;
+	font-size: var(--wp--preset--font-size--small);
+	width: 100%;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+	outline-color: var(--wp--preset--color--primary);
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+}
+
+label {
+	width: 100%;
+	display: block;
+}
+
+::placeholder {
+	color: var(--wp--preset--color--secondary);
+	font-size: var(--wp--preset--font-size--small);
+	opacity: 0.75;
+}
+
 /* Blocks
 ---------------------------------------------------------------------------- */
 
@@ -157,7 +214,7 @@ textarea {
 
 .wp-block-navigation__responsive-container.is-menu-open {
 	padding-bottom: 30px;
-	padding-top: 30px
+	padding-top: 30px;
 }
 
 .wp-block-navigation__responsive-container-close,
@@ -174,7 +231,8 @@ textarea {
 /* Navigation Submenu
 --------------------------------------------- */
 
-.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+.wp-block-navigation:not(.has-background)
+	.wp-block-navigation__submenu-container {
 	background-color: var(--wp--preset--color--contrast);
 	border: var(--wp--preset--color--contrast);
 	color: var(--wp--preset--color--base);
@@ -200,29 +258,24 @@ textarea {
 ---------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 600px) {
-
 	/* Utility
 	--------------------------------------------- */
 
 	.is-style-hidden-mobile {
 		display: none !important;
 	}
-
 }
 
 @media only screen and (max-width: 782px) {
-
 	/* Columns
 	--------------------------------------------- */
 
 	.is-style-columns-reverse {
 		flex-direction: column-reverse;
 	}
-
 }
 
 @media only screen and (min-width: 600px) {
-
 	/* Navigation Link
 	--------------------------------------------- */
 
@@ -230,5 +283,49 @@ textarea {
 		border: 1px solid currentColor;
 		padding: 8px 15px;
 	}
+}
 
+/* Helper styles that can't be done via theme.json
+---------------------------------------------------------------------------- */
+
+a.more-link {
+	display: block;
+}
+
+/* Inline code */
+*:not(.wp-block-code) > code {
+	background-color: var(--wp--preset--color--tertiary);
+	font-weight: var(--wp--custom--font-weight--medium);
+	padding: 3px 5px;
+	position: relative;
+	border-radius: 3px;
+}
+
+/* Adjust terms at bottom of posts */
+.single .wp-block-group .wp-block-post-terms,
+.blog .wp-block-group .wp-block-post-terms {
+	margin-bottom: -8px !important;
+}
+
+/* Remove margin on term description on archive pages */
+.wp-block-term-description p:last-child {
+	margin-bottom: 0;
+}
+
+/* Remove last separator on post list */
+.remove-border-and-padding
+	.wp-block-post-template
+	li:last-child
+	.wp-block-separator {
+	display: none;
+}
+
+/* Hide post meta div if no tags assigned */
+.single .wp-block-group:has(> .post-meta:empty) {
+	display: none;
+}
+
+.primary-article-category a,
+.two-up-article-category a {
+	font-size: 14px;
 }
