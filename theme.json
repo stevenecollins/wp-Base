@@ -125,8 +125,8 @@
 			}
 		},
 		"layout": {
-			"contentSize": "640px",
-			"wideSize": "1200px"
+			"contentSize": "768px",
+			"wideSize": "1600px"
 		},
 		"shadow": {
 			"defaultPresets": false,
