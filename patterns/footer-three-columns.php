@@ -16,7 +16,8 @@
     <p><a href="#"><?php echo esc_html__('Privacy Policy', 'myBase'); ?></a> · <a href="#"><?php echo esc_html__('Terms of Service', 'myBase'); ?></a> · <a href="#"><?php echo esc_html__('Contact Us', 'myBase'); ?></a></p>
     <!-- /wp:paragraph -->
     <!-- wp:social-links {"iconColor":"base","iconColorValue":"#fff","iconBackgroundColor":"contrast","iconBackgroundColorValue":"#000","style":{"spacing":{"blockGap":"10px"}},"className":"is-style-default"} -->
-    <ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default"><!-- wp:social-link {"url":"#","service":"facebook"} /-->
+    <ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default">
+      <!-- wp:social-link {"url":"#","service":"facebook"} /-->
       <!-- wp:social-link {"url":"#","service":"instagram"} /-->
       <!-- wp:social-link {"url":"#","service":"twitter"} /-->
     </ul>

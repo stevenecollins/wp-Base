@@ -16,12 +16,7 @@
       <!-- wp:paragraph -->
       <p><?php echo esc_html__('With its clean, minimal design and powerful feature set, myBase enables agencies to build stylish and sophisticated WordPress websites.', 'myBase'); ?></p>
       <!-- /wp:paragraph -->
-      <!-- wp:buttons -->
-      <div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
-        <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--medium)"><?php echo esc_html__('Learn More', 'myBase'); ?></a></div>
-        <!-- /wp:button -->
-      </div>
-      <!-- /wp:buttons -->
+
     </div>
     <!-- /wp:column -->
     <!-- wp:column {"width":"15%"} -->
@@ -98,5 +93,34 @@
     <!-- /wp:column -->
   </div>
   <!-- /wp:columns -->
+  <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}},"border":{"top":{"color":"#e5e5e5","width":"1px"}}},"layout":{"type":"flex","allowOrientation":false,"justifyContent":"space-between"}} -->
+  <div class="wp-block-group alignwide" style="border-top-color:#e5e5e5;border-top-width:1px;padding-top:var(--wp--preset--spacing--small)">
+    <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+    <div class="wp-block-group">
+      <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+      <div class="wp-block-group">
+        <!-- wp:paragraph -->
+        <p>&copy; <?php echo esc_html(gmdate('Y')); ?> <?php echo esc_html__('Your Company LLC', 'myBase'); ?></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:paragraph -->
+      <p> · </p>
+      <!-- /wp:paragraph -->
+      <!-- wp:paragraph -->
+      <p>Theme by <a href="https://stevenecollins.com/">Steven Collins</a></p>
+      <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:group -->
+    <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#0a0a0a","openInNewTab":true,"size":"has-small-icon-size","className":"is-style-outline"} -->
+    <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-outline">
+      <!-- wp:social-link {"url":"https://twitter.com/","service":"twitter"} /-->
+      <!-- wp:social-link {"url":"https://instagram.com/","service":"instagram"} /-->
+      <!-- wp:social-link {"url":"https://www.linkedin.com/","service":"linkedin"} /-->
+      <!-- wp:social-link {"url":"https://www.facebook.com/","service":"facebook"} /-->
+    </ul>
+    <!-- /wp:social-links -->
+  </div>
+  <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
