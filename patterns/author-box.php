@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Title: Box with image, text, social icons.
+ * Title: Author Box Center
  * Slug: myBase/author-box
  * Categories: call-to-action
  */
